@@ -134,7 +134,7 @@ def get_counts(seq):
 
 if st.button('그래프 그리기'):
     try_n_3 = 1
-    while try_n_2 > try_n_3 :
+    while try_n_2 >= try_n_3 :
         dice1 = random.choice(dice)
         dice2 = random.choice(dice)
         n = 1
