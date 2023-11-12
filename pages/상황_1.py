@@ -11,10 +11,6 @@ import base64
 import os
 import matplotlib.font_manager as fm
 
-def unique(list):
-    x = np.array(list)
-    return np.unique(x)
-
 font_dirs = [os.getcwd() + '/customFonts']
 font_files = fm.findSystemFonts(fontpaths=font_dirs)
 for font_file in font_files:
@@ -104,7 +100,7 @@ st.divider()
 st.write("")
 
 st.write("시행횟수에 따라 달라지는 주사위 1개를 굴릴 때 마다 나오는 눈의 수를 그래프로 확인해봅시다.")
-try_n_2 = st.slider('시행횟수를 입력하세요.', 10, 2000, 10, 10)
+try_n_2 = st.slider('시행횟수를 입력하세요.', 10, 10000, 10, 10)
 
 choice2_list = []
 
