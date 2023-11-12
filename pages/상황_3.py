@@ -159,7 +159,7 @@ if st.button('그래프 그리기'):
     plt.title('주사위 그래프', fontsize=18)
     plt.xlabel('성공까지 걸린 횟수', fontsize=15)
     plt.ylabel('상대도수', fontsize=15)
-    plt.xticks(index, try_list2, fontsize=7)
+    plt.xticks(index, try_list2, fontsize=5)
     st.pyplot(fig)
 
 
