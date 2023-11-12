@@ -1,10 +1,6 @@
 import streamlit as st
-from streamlit_option_menu import option_menu
-import streamlit.components.v1 as html
 from PIL import Image
 import numpy as np
-import pandas as pd
-import seaborn as sns
 import matplotlib as mpl
 import matplotlib.pyplot as plt
 import random
@@ -119,6 +115,7 @@ st.write("")
 st.divider()
 st.write("")
 
+st.write("시행횟수에 따라 달라지는 주사위 2개를 굴릴 때 마다 나오는 눈의 수의 합을 그래프로 확인해봅시다.")
 try_n_2 = st.slider('시행횟수를 입력하세요.', 10, 2000, 10, 10)
 
 choice2_list = []

@@ -1,10 +1,6 @@
 import streamlit as st
-from streamlit_option_menu import option_menu
-import streamlit.components.v1 as html
 from PIL import Image
 import numpy as np
-import pandas as pd
-import seaborn as sns
 import matplotlib as mpl
 import matplotlib.pyplot as plt
 import random
@@ -107,6 +103,7 @@ st.write("")
 st.divider()
 st.write("")
 
+st.write("시행횟수에 따라 달라지는 주사위 2개를 굴렸을 때 같은 눈의 수가 나올 때까지 걸린 횟수를 그래프로 확인해봅시다.")
 try_n_2 = st.slider('시행횟수를 입력하세요.', 10, 2000, 10, 10)
 
 try_list = []
