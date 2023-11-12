@@ -7,7 +7,20 @@ import random
 import time
 import base64
 
-plt.rc('font', family='Malgun Gothic')
+
+import os
+import matplotlib.font_manager as fm
+
+def unique(list):
+    x = np.array(list)
+    return np.unique(x)
+
+font_dirs = [os.getcwd() + '/customFonts']
+font_files = fm.findSystemFonts(fontpaths=font_dirs)
+for font_file in font_files:
+    fm.fontManager.addfont(font_file)
+fm._load_fontmanager(try_read_cache=False)
+plt.rc('font', family='NanumSquareRound')
 mpl.rcParams['axes.unicode_minus'] = False
 
 st.header(":face_with_cowboy_hat:선공 결정하기",divider="rainbow")

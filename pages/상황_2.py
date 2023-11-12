@@ -7,7 +7,15 @@ import random
 import time
 import base64
 
-plt.rc('font', family='Malgun Gothic')
+import os
+import matplotlib.font_manager as fm
+
+font_dirs = [os.getcwd() + '/customFonts']
+font_files = fm.findSystemFonts(fontpaths=font_dirs)
+for font_file in font_files:
+    fm.fontManager.addfont(font_file)
+fm._load_fontmanager(try_read_cache=False)
+plt.rc('font', family='NanumSquareRound')
 mpl.rcParams['axes.unicode_minus'] = False
 
 st.header("전략적 도시:statue_of_liberty: 매입하기",divider="rainbow")
