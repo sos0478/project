@@ -7,7 +7,6 @@ import random
 import time
 import base64
 
-
 import os
 import matplotlib.font_manager as fm
 
@@ -79,12 +78,14 @@ def roll_dice():
         st.session_state["sucess"] = st.session_state["sucess"] + 1
         container.write("시행횟수 : {}".format(st.session_state["try_n"]))
         container.write("맞춘횟수 : {}".format(st.session_state["sucess"]))
+        container.write("상대도수 : {}".format((st.session_state["sucess"]/st.session_state["try_n"])))
         container.write("예측이 맞았습니다.")
         st.session_state["end"] = True
     else:
         st.session_state["try_n"] = st.session_state["try_n"] + 1
         container.write("시행횟수 : {}".format(st.session_state["try_n"]))
         container.write("맞춘횟수 : {}".format(st.session_state["sucess"]))
+        container.write("상대도수 : {}".format((st.session_state["sucess"]/st.session_state["try_n"])))
         container.write("예측이 틀렸습니다.")
 
 def restart():

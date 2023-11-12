@@ -103,12 +103,14 @@ def roll_dice2():
         st.session_state["sucess2"] = st.session_state["sucess2"] + 1
         container.write("시행횟수 : {}".format(st.session_state["try_n2"]))
         container.write("맞춘횟수 : {}".format(st.session_state["sucess2"]))
+        container.write("상대도수 : {}".format((st.session_state["sucess2"]/st.session_state["try_n2"])))
         container.write("상대방이 구입한 도시에 도착했습니다.")
         st.session_state["end2"] = True
     else:
         st.session_state["try_n2"] = st.session_state["try_n2"] + 1
         container.write("시행횟수 : {}".format(st.session_state["try_n2"]))
         container.write("맞춘횟수 : {}".format(st.session_state["sucess2"]))
+        container.write("상대도수 : {}".format((st.session_state["sucess2"]/st.session_state["try_n2"])))
         container.write("상대방이 구입한 도시에 도착하지 않았습니다.")
 
 def restart2():
@@ -123,7 +125,7 @@ st.write("")
 st.divider()
 st.write("")
 
-st.write("시행횟수에 따라 달라지는 주사위 2개를 굴릴 때 마다 나오는 눈의 수의 합을 그래프로 확인해봅시다.")
+st.write("시행횟수에 따라 두 개의 주사위의 눈의 수의 합의 상대도수를 그래프로 확인해봅시다.")
 try_n_2 = st.slider('시행횟수를 입력하세요.', 10, 10000, 10, 10)
 
 choice2_list = []
