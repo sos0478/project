@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 import random
 import time
 import base64
-
+import pandas as pd
 import os
 import matplotlib.font_manager as fm
 
@@ -147,8 +147,9 @@ if st.button('그래프 그리기'):
         try_n_3 = try_n_3 + 1
     try_list.sort()
     try_dic = get_counts(try_list)
-    try_list2 = list(try_dic.keys())
-    success_list = list(try_dic.values())
+    try_DF = pd.DataFrame(try_dic, index=[0])
+    try_list2 = list(try_DF.columns)
+    success_list = list(try_DF.iloc[0])
     
     index = np.arange(len(try_list2))
     for i in success_list:

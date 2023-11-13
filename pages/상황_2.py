@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 import random
 import time
 import base64
-
+import pandas as pd
 import os
 import matplotlib.font_manager as fm
 
@@ -36,6 +36,8 @@ city = ['부에노스아이레스', '상파울루', '시드니', '부산', '하�
 city_N = st.selectbox("구입할 도시를 골라주세요.", city)
 
 city_dice_N = {'사회복지기금접수처':1, '부에노스아이레스':2, '황금열쇠':3, '상파울루':4, '시드니':5, '부산':6, '하와이':7, '리스본':8, '퀸엘리자베스호':9, '마드리드':10, '우주여행':11, '도쿄':12}
+city_dice_DF = pd.DataFrame(city_dice_N, index = [0])
+
 
 container = st.container()
 container.write("")
@@ -98,7 +100,7 @@ def roll_dice2():
         container.image(blackdice5, width=100)
     else:
         container.image(blackdice6, width=100)
-    if int(choice1) + int(choice2) == city_dice_N[city_N]:
+    if int(choice1) + int(choice2) == city_dice_DF[city_N][0]:
         st.session_state["try_n2"] = st.session_state["try_n2"] + 1
         st.session_state["sucess2"] = st.session_state["sucess2"] + 1
         container.write("시행횟수 : {}".format(st.session_state["try_n2"]))
